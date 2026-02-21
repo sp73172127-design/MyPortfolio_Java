@@ -1,190 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShivamTech | Java Full Stack Portfolio</title>
+    <title>Shivam Pandey | Java Full Stack Expert</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Icons and Fonts Fixed -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    <link href="https://unpkg.com" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background-color: #050816; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; background-color: #030712; color: white; overflow-x: hidden; }
+        .gradient-text { background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; transition: 0.4s; }
+        .skill-bar { height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+        .skill-progress { height: 100%; background: linear-gradient(to right, #3b82f6, #8b5cf6); border-radius: 10px; transition: 2s ease-in-out; }
         
-        /* Profile Ring Animation */
-        @keyframes spin-slow { 100% { transform: rotate(360deg); } }
-        .animate-spin-slow { animation: spin-slow 8s linear infinite; }
-
-        .project-card {
-            background: rgba(17, 25, 40, 0.75);
-            backdrop-filter: blur(16px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.125);
-            border-radius: 24px;
-            transition: 0.4s ease;
-        }
-        .project-card:hover {
-            transform: translateY(-12px);
-            border-color: #3b82f6;
-            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.5);
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        /* Floating Contact Buttons */
+        .floating-contact { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 100; }
+        .btn-float { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: 0.3s; }
+        .btn-float:hover { transform: scale(1.1) rotate(10deg); }
+        .bg-whatsapp { background-color: #25d366; }
+        .bg-call { background-color: #3b82f6; }
     </style>
 </head>
-<body class="text-white">
+<body>
+
+    <!-- Floating Buttons -->
+    <div class="floating-contact">
+        <a href="https://wa.me!" target="_blank" class="btn-float bg-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+917317212722" class="btn-float bg-call">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-[#050816]/80 backdrop-blur-lg border-b border-white/5 px-6 py-4">
+    <nav class="fixed top-0 w-full z-50 bg-[#030712]/80 backdrop-blur-lg border-b border-white/5 px-6 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold gradient-text tracking-tighter">ShivamTech</h1>
+            <h1 class="text-2xl font-bold tracking-tighter">Shivam<span class="text-blue-500">Pandey</span></h1>
             <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
                 <a href="#home" class="hover:text-white transition">Home</a>
-                <a href="#projects" class="hover:text-white transition">My Projects</a>
+                <a href="#projects" class="hover:text-white transition">Projects</a>
                 <a href="#skills" class="hover:text-white transition">Skills</a>
-                <a href="mailto:sp73172127@gmail.com" class="text-blue-400 border border-blue-400/30 px-4 py-1 rounded-full hover:bg-blue-400 hover:text-white transition">Hire Me</a>
+                <a href="mailto:sp73172127@gmail.com" class="bg-blue-600/20 text-blue-400 border border-blue-600/30 px-5 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Mail Me</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-40 pb-20 px-6 text-center max-w-4xl mx-auto">
-        
-        <!-- PROFILE PHOTO SECTION (Line 55) -->
-        <div class="flex justify-center mb-10">
-            <div class="relative w-40 h-40 flex items-center justify-center">
-                <!-- Animated Border -->
-                <div class="absolute inset-0 rounded-full border-2 border-dashed border-blue-500 animate-spin-slow"></div>
-                <!-- यहाँ अपनी फोटो का नाम डालें जैसे: src="myphoto.jpg" -->
-                <img src="Shivamphoto.jpg" alt="Shivam" class="w-36 h-36 rounded-full border-4 border-[#050816] object-cover shadow-2xl z-10">
+    <section id="home" class="pt-48 pb-24 px-6 text-center max-w-4xl mx-auto">
+        <div data-aos="zoom-in" class="flex justify-center mb-10">
+            <div class="relative w-40 h-40">
+                <div class="absolute inset-0 rounded-full bg-blue-500 blur-xl opacity-20 animate-pulse"></div>
+                <!-- आपकी फोटो: Shivamphoto.jpg -->
+                <img src="Shivamphoto.jpg" alt="Shivam Pandey" class="relative w-40 h-40 rounded-full border-4 border-gray-900 object-cover z-10 shadow-2xl">
             </div>
         </div>
-
-        <div class="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold mb-6">
-            AVAILABLE FOR WORK
-        </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-            I build <span class="gradient-text">Scalable</span> & Modern Web Apps.
+        <h1 data-aos="fade-up" class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            I'm a <span class="gradient-text" id="typing"></span>
         </h1>
-        <p class="text-gray-400 text-lg mb-10 leading-relaxed">
-            Hi, I'm <span class="text-white font-semibold">Shivam</span>, a Java Full Stack Developer from Noida. Specializing in high-performance backends with Spring Boot and reactive frontends.
+        <p data-aos="fade-up" data-aos-delay="200" class="text-gray-400 text-lg mb-10">
+            Professional **Java Full Stack Developer** based in Noida. Delivering secure and scalable digital solutions.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold transition shadow-xl shadow-blue-500/20">
-                Explore Projects
-            </a>
-            <a href="https://github.com/sp73172127-design" target="_blank" class="bg-white/5 hover:bg-white/10 text-white px-8 py-4 rounded-2xl font-bold transition border border-white/10">
+            <a href="mailto:sp73172127@gmail.com" class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-2xl font-bold transition shadow-xl shadow-blue-500/30">Hire Me Now</a>
+            <!-- आपका GitHub प्रोफाइल लिंक -->
+            <a href="https://github.com/sp73172127-design" target="_blank" class="bg-white/5 border border-white/10 px-8 py-4 rounded-2xl font-bold hover:bg-white/10 transition">
                 <i class="fab fa-github mr-2"></i>GitHub
             </a>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="max-w-6xl mx-auto px-6 py-24">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4 underline decoration-blue-500 decoration-4 underline-offset-8 text-white">Core Projects</h2>
-            <p class="text-gray-400 mt-4">Handcrafted projects showcasing my full-stack expertise.</p>
-        </div>
-
+    <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
+        <h2 data-aos="fade-right" class="text-3xl font-bold mb-12 flex items-center gap-4">
+            <span class="w-10 h-1 bg-blue-600 rounded-full"></span> Featured Projects
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- Project 1: E-Commerce Backend -->
-            <div class="project-card p-6 flex flex-col">
-                <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-shopping-bag text-2xl text-blue-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">E-Store Microservices</h3>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                    A robust backend architecture using **Spring Cloud**. Includes Discovery Server (Eureka), API Gateway, and specialized services for Orders, Inventory, and Products.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6 text-xs">
-                    <span class="bg-blue-500/10 text-blue-300 px-2 py-1 rounded">Spring Boot</span>
-                    <span class="bg-blue-500/10 text-blue-300 px-2 py-1 rounded">Docker</span>
-                    <span class="bg-blue-500/10 text-blue-300 px-2 py-1 rounded">PostgreSQL</span>
-                </div>
-                <a href="#" class="text-sm font-bold text-blue-400 hover:text-blue-300 transition flex items-center">
-                    View Code <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                </a>
+            <div data-aos="fade-up" class="glass-card p-8">
+                <h3 class="text-xl font-bold mb-4">E-Store Microservices</h3>
+                <p class="text-gray-400 text-sm mb-6">Spring Boot, Cloud, and Docker based architecture.</p>
+                <div class="flex gap-2 mb-6"><span class="text-[10px] bg-blue-500/10 px-2 py-1 rounded text-blue-400">Java</span> <span class="text-[10px] bg-blue-500/10 px-2 py-1 rounded text-blue-400">Microservices</span></div>
+                <a href="https://github.com/sp73172127-design" target="_blank" class="text-blue-400 text-sm font-bold hover:underline">View Code →</a>
             </div>
-
-            <!-- Project 2: Employee Management -->
-            <div class="project-card p-6 flex flex-col">
-                <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-users-cog text-2xl text-purple-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">EMS Dashboard</h3>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                    Full Stack application to manage corporate resources. Integrated with **Spring Security (JWT)** for role-based login and **React** for a smooth UI.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6 text-xs">
-                    <span class="bg-purple-500/10 text-purple-300 px-2 py-1 rounded">Java 17</span>
-                    <span class="bg-purple-500/10 text-purple-300 px-2 py-1 rounded">React JS</span>
-                    <span class="bg-purple-500/10 text-purple-300 px-2 py-1 rounded">Hibernate</span>
-                </div>
-                <a href="#" class="text-sm font-bold text-purple-400 hover:text-purple-300 transition flex items-center">
-                    View Code <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                </a>
+            <div data-aos="fade-up" data-aos-delay="200" class="glass-card p-8">
+                <h3 class="text-xl font-bold mb-4">Secure EMS Portal</h3>
+                <p class="text-gray-400 text-sm mb-6">Employee management with JWT security & React.</p>
+                <div class="flex gap-2 mb-6"><span class="text-[10px] bg-purple-500/10 px-2 py-1 rounded text-purple-400">React</span> <span class="text-[10px] bg-purple-500/10 px-2 py-1 rounded text-purple-400">Security</span></div>
+                <a href="https://github.com/sp73172127-design" target="_blank" class="text-purple-400 text-sm font-bold hover:underline">View Code →</a>
             </div>
-
-            <!-- Project 3: Library System -->
-            <div class="project-card p-6 flex flex-col">
-                <div class="w-14 h-14 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6">
-                    <i class="fas fa-book-reader text-2xl text-emerald-400"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Digital Lib Portal</h3>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-                    Automated book issuing system. Uses **Spring Data JPA** for complex queries and **Thymeleaf** for server-side rendering with real-time email alerts.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-6 text-xs">
-                    <span class="bg-emerald-500/10 text-emerald-300 px-2 py-1 rounded">MySQL</span>
-                    <span class="bg-emerald-500/10 text-emerald-300 px-2 py-1 rounded">Spring Boot</span>
-                    <span class="bg-emerald-500/10 text-emerald-300 px-2 py-1 rounded">SMTP API</span>
-                </div>
-                <a href="#" class="text-sm font-bold text-emerald-400 hover:text-emerald-300 transition flex items-center">
-                    View Code <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                </a>
+            <div data-aos="fade-up" data-aos-delay="400" class="glass-card p-8">
+                <h3 class="text-xl font-bold mb-4">Library System</h3>
+                <p class="text-gray-400 text-sm mb-6">Automated issuing system using Spring Data JPA.</p>
+                <div class="flex gap-2 mb-6"><span class="text-[10px] bg-emerald-500/10 px-2 py-1 rounded text-emerald-400">SQL</span> <span class="text-[10px] bg-emerald-500/10 px-2 py-1 rounded text-emerald-400">Optimization</span></div>
+                <a href="https://github.com/sp73172127-design" target="_blank" class="text-emerald-400 text-sm font-bold hover:underline">View Code →</a>
             </div>
-
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24 bg-white/[0.02] border-t border-white/5">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Tech Stack</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                    <i class="fab fa-java text-4xl text-red-500 mb-4"></i>
-                    <h4 class="font-bold">Java EE</h4>
+    <section id="skills" class="py-20 bg-gray-900/20">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 data-aos="fade-up" class="text-3xl font-bold mb-12 text-center">Technical Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div data-aos="fade-right">
+                    <div class="flex justify-between mb-2"><span class="font-bold text-gray-300">Java / Spring Boot</span><span>90%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
                 </div>
-                <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                    <i class="fas fa-leaf text-4xl text-green-500 mb-4"></i>
-                    <h4 class="font-bold">Spring Boot</h4>
+                <div data-aos="fade-left">
+                    <div class="flex justify-between mb-2"><span class="font-bold text-gray-300">React JS / Frontend</span><span>80%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
                 </div>
-                <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                    <i class="fab fa-react text-4xl text-blue-400 mb-4"></i>
-                    <h4 class="font-bold">React & UI</h4>
+                <div data-aos="fade-right">
+                    <div class="flex justify-between mb-2"><span class="font-bold text-gray-300">SQL / Hibernate</span><span>85%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
                 </div>
-                <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
-                    <i class="fas fa-database text-4xl text-yellow-500 mb-4"></i>
-                    <h4 class="font-bold">SQL / NoSQL</h4>
+                <div data-aos="fade-left">
+                    <div class="flex justify-between mb-2"><span class="font-bold text-gray-300">DevOps / Docker</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer class="py-20 px-6 border-t border-white/5 text-center">
-        <h2 class="text-3xl font-bold mb-4 gradient-text">Get In Touch</h2>
-        <p class="text-gray-400 mb-10">Available for Noida/Remote opportunities.</p>
-        <div class="flex flex-col md:flex-row justify-center gap-6 mb-12 text-sm">
-            <a href="tel:+917317212722" class="bg-white/5 px-6 py-3 rounded-full hover:text-blue-400 transition"><i class="fas fa-phone-alt mr-2 text-blue-500"></i> +91 7317212722</a>
-            <a href="mailto:sp73172127@gmail.com" class="bg-white/5 px-6 py-3 rounded-full hover:text-purple-400 transition"><i class="fas fa-envelope mr-2 text-purple-500"></i> sp73172127@gmail.com</a>
+    <!-- Footer -->
+    <footer class="py-20 text-center border-t border-white/5">
+        <p class="text-gray-400 mb-6 font-bold uppercase tracking-widest">Connect With Me</p>
+        <div class="flex justify-center gap-10 mb-12">
+            <a href="mailto:sp73172127@gmail.com" class="text-3xl hover:text-blue-500 transition"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/sp73172127-design" target="_blank" class="text-3xl hover:text-white transition"><i class="fab fa-github"></i></a>
+            <a href="tel:+917317212722" class="text-3xl hover:text-emerald-500 transition"><i class="fas fa-phone"></i></a>
         </div>
-        <p class="text-gray-600 text-xs">&copy; 2024 ShivamTech | Noida, Uttar Pradesh</p>
+        <p class="text-gray-600 text-xs italic">&copy; 2024 Shivam Pandey | Designed for Excellence</p>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com"></script>
+    <script src="https://unpkg.com"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        new Typewriter('#typing', {
+            strings: ['Java Developer', 'Full Stack Expert', 'Problem Solver'],
+            autoStart: true, loop: true
+        });
+    </script>
 </body>
 </html>
